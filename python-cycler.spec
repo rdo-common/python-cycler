@@ -5,7 +5,7 @@ marker styles, etc
 
 Name:           python-%{srcname}
 Version:        0.9.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        %{sum}
 
 License:        BSD
@@ -68,6 +68,9 @@ BuildRequires:  python3-devel python3-six python3-setuptools
 %{python3_sitelib}/*
 
 %changelog
+* Sun Nov 15 2015 Neal Becker <ndbecker2@gmail.com> - 0.9.0-5
+- rebuild for py3.5
+
 * Fri Nov  6 2015 Neal Becker <ndbecker2@gmail.com> - 0.9.0-3
 - fix license
 
