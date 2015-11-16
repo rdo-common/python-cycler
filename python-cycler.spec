@@ -5,7 +5,7 @@ marker styles, etc
 
 Name:           python-%{srcname}
 Version:        0.9.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        %{sum}
 
 License:        BSD
@@ -20,7 +20,7 @@ BuildArch:      noarch
 %package -n python2-%{srcname}
 Summary:        %{sum}
 Requires:       python-six
-BuildRequires:  python2-devel python-six python-setuptools
+BuildRequires:  python2-devel python-six python-setuptools python-nose
 
 %{?python_provide:%python_provide python2-%{srcname}}
 
@@ -31,7 +31,7 @@ BuildRequires:  python2-devel python-six python-setuptools
 %package -n python3-%{srcname}
 Summary:        %{sum}
 Requires:       python3-six
-BuildRequires:  python3-devel python3-six python3-setuptools
+BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 
 %{?python_provide:%python_provide python3-%{srcname}}
 
@@ -68,6 +68,9 @@ BuildRequires:  python3-devel python3-six python3-setuptools
 %{python3_sitelib}/*
 
 %changelog
+* Sun Nov 15 2015 Neal Becker <ndbecker2@gmail.com> - 0.9.0-6
+- Add BR python-nose
+
 * Sun Nov 15 2015 Neal Becker <ndbecker2@gmail.com> - 0.9.0-5
 - rebuild for py3.5
 
