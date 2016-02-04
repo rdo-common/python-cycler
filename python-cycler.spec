@@ -5,7 +5,7 @@ marker styles, etc
 
 Name:           python-%{srcname}
 Version:        0.9.0
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        %{sum}
 
 License:        BSD
@@ -68,6 +68,9 @@ BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 %{python3_sitelib}/*
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.0-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Sun Nov 15 2015 Neal Becker <ndbecker2@gmail.com> - 0.9.0-6
 - Add BR python-nose
 
