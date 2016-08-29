@@ -4,8 +4,8 @@
 marker styles, etc
 
 Name:           python-%{srcname}
-Version:        0.9.0
-Release:        8%{?dist}
+Version:        0.10.0
+Release:        1%{?dist}
 Summary:        %{sum}
 
 License:        BSD
@@ -68,6 +68,9 @@ BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 %{python3_sitelib}/*
 
 %changelog
+* Mon Aug 29 2016 Neal Becker <nbecker@nbecker2> - 0.10.0-1
+- Update to 0.10.0
+
 * Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.0-8
 - https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
 
