@@ -5,7 +5,7 @@ marker styles, etc
 
 Name:           python-%{srcname}
 Version:        0.10.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{sum}
 
 License:        BSD
@@ -68,6 +68,9 @@ BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 %{python3_sitelib}/*
 
 %changelog
+* Tue Dec 13 2016 Stratakis Charalampos <cstratak@redhat.com> - 0.10.0-2
+- Rebuild for Python 3.6
+
 * Mon Aug 29 2016 Neal Becker <nbecker@nbecker2> - 0.10.0-1
 - Update to 0.10.0
 
