@@ -3,6 +3,10 @@
 %global desc General purpose library used by matplotlib to cycle through lists for colors,\
 marker styles, etc
 
+%if 0%{?fedora}
+%global with_python3 1
+%endif
+
 Name:           python-%{srcname}
 Version:        0.10.0
 Release:        2%{?dist}
@@ -28,6 +32,7 @@ BuildRequires:  python2-devel python-six python-setuptools python-nose
 %{desc}
 
 
+%if 0%{?with_python3}
 %package -n python3-%{srcname}
 Summary:        %{sum}
 Requires:       python3-six
@@ -37,24 +42,31 @@ BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 
 %description -n python3-%{srcname}
 %{desc}
+%endif
 
 %prep
 %autosetup -n %{srcname}-%{version}
 
 %build
 %py2_build
+%if 0%{?with_python3}
 %py3_build
+%endif
 
 %install
 # Must do the python2 install first because the scripts in /usr/bin are
 # overwritten with every setup.py install, and in general we want the
 # python3 version to be the default.
 %py2_install
+%if 0%{?with_python3}
 %py3_install
+%endif
 
 %check
 %{__python2} setup.py test
+%if 0%{?with_python3}
 %{__python3} setup.py test
+%endif
 
 # Note that there is no %%files section for the unversioned python module if we are building for several python runtimes
 %files -n python2-%{srcname}
@@ -62,10 +74,12 @@ BuildRequires:  python3-devel python3-six python3-setuptools python3-nose
 %license LICENSE
 %{python2_sitelib}/*
 
+%if 0%{?with_python3}
 %files -n python3-%{srcname}
 %doc README.rst
 %license LICENSE
 %{python3_sitelib}/*
+%endif
 
 %changelog
 * Tue Dec 13 2016 Stratakis Charalampos <cstratak@redhat.com> - 0.10.0-2
